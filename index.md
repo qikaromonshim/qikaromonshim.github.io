@@ -1,5 +1,7 @@
-// front matter tells Jekyll to process Liquid
-
+---
+layout: default
+---
+# Header 1
 <!DOCTYPE html>
 <html>
   <head>
