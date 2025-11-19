@@ -1,8 +1,9 @@
 <nav>
   <ul>
- <li> <a href="/" class="button"> Ana Sayfa </a></li>
- <li> <a href="/hakkimda" class="button"> hakkımda </a></li>
-  <li> <a href="/iletisim" class="button"> iletişim </a> </li>
+    {% for item in site.data.navigation %}
+
+ <li> <a href="{{ item.link }}" class="button"> {{item.name}} </a></li>    
+    {% endfor %}
   </ul>
 </nav>
 
