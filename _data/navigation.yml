@@ -6,3 +6,5 @@
   link : /iletisim
 - name: reklamlar
   link: /reklam
+- name: blog
+  link: /blog
