@@ -1,0 +1,14 @@
+---
+title: Palette Maker
+name: palette
+description: Hızlı renk paletleri oluştur, renk kodlarını kopyala ve paleti indir.
+---
+
+<div class="palette-controls">
+  <button id="randomize">Rastgele Palet</button>
+  <button id="export">Paleti Kopyala</button>
+</div>
+
+<div id="palette" class="palette-grid" aria-live="polite"></div>
+
+<script src="{{ '/assets/js/palette.js' | relative_url }}"></script>
