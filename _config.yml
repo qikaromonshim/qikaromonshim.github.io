@@ -1,5 +1,21 @@
-title: hebele hubele x2
-description: burası artık bir sayfa.
-show_downloads: false
-google_analytics:
-theme: jekyll-theme-leap-day
+title: Creative Jekyll Studio
+description: Interaktif mini-app'ler ve portfolyo — Jekyll ile yapılmış yaratıcı proje.
+baseurl: "" # repo adı ile deploy ediyorsan /repo-name gir
+url: "https://<kullanici>.github.io" # production URL
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+collections:
+  apps:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: "apps"
+    values:
+      layout: "app"
+      permalink: "/apps/:name/"
+exclude:
+  - node_modules
+markdown: kramdown
