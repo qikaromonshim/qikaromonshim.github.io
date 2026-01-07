@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ page.title }} — {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  </head>
+  <body class="theme-light">
+    <header class="site-header wrap">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <nav><a href="{{ '/' | relative_url }}">Ana</a></nav>
+    </header>
+
+    <main class="wrap app-page">
+      <article class="app-meta">
+        <h2>{{ page.title }}</h2>
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+      </article>
+
+      <section class="app-demo">
+        <!-- app demo kısmı: markdown içeriğinde demo markup olacak -->
+        {{ content }}
+      </section>
+    </main>
+
+    <footer class="wrap site-footer">
+      <small>© {{ site.title }} — {{ 'now' | date: "%Y" }}</small>
+    </footer>
+  </body>
+</html>
