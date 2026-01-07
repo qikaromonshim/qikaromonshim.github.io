@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  </head>
+  <body class="theme-light">
+    <header class="site-header">
+      <div class="wrap">
+        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        <nav>
+          <a href="{{ '/' | relative_url }}">Ana</a>
+          <a href="{{ '/apps/' | relative_url }}">Uygulamalar</a>
+          <button id="theme-toggle" aria-label="Tema değiştir">🌙</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer wrap">
+      <small>© {{ site.title }} — {{ 'now' | date: "%Y" }}</small>
+    </footer>
+
+    <script>
+      // Basit tema toggle
+      (function(){
+        const btn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        function setTheme(t){
+          document.body.className = t;
+          localStorage.setItem('theme', t);
+        }
+        btn.addEventListener('click', ()=>{
+          const next = document.body.classList.contains('theme-dark') ? 'theme-light' : 'theme-dark';
+          setTheme(next);
+        });
+        const saved = localStorage.getItem('theme') || 'theme-light';
+        setTheme(saved);
+      })();
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker && navigator.serviceWorker.register('/service-worker.js').catch(()=>{});
+      }
+    </script>
+  </body>
+</html>
