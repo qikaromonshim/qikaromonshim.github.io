@@ -16,9 +16,10 @@ window.addEventListener('resize', () => {
 
 const mouse = { x: 0, y: 0 };
 
-window.addEventListener('mousemove', e => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+canvas.addEventListener('mousemove', e => {
+  const rect = canvas.getBoundingClientRect();
+  mouse.x = e.clientX - rect.left;
+  mouse.y = e.clientY - rect.top;
 });
 
 export { canvas, ctx, width, height, mouse };
