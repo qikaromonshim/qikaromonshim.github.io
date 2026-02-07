@@ -44,7 +44,7 @@ update() {
   }
 
   isClicked(mx, my) {
-    return Math.hypot(this.x - mx, this.y - my) < this.size;
+    return Math.hypot(this.x - mx, this.y - my) < this.size + 10;
   }
 }
 
