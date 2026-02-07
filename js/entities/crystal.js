@@ -9,8 +9,8 @@ export class Crystal {
   reset() {
     this.x = Math.random() * width;
     this.y = Math.random() * height;
-    this.vx = (Math.random() - 0.5) * 4;
-    this.vy = (Math.random() - 0.5) * 4;
+    this.vx = (Math.random() - 0.5) * 1.5;
+    this.vy = (Math.random() - 0.5) * 1.5;
   }
 
 update() {
@@ -23,13 +23,14 @@ update() {
 
   if (dist < 120) {
     const a = Math.atan2(dy, dx);
-    this.vx += Math.cos(a) * 0.3;
-    this.vy += Math.sin(a) * 0.3;
+    this.vx += Math.cos(a) * 0.8;
+    this.vy += Math.sin(a) * 0.8;
   }
 
   // hız limiti (çok önemli)
-  this.vx = Math.max(-3, Math.min(3, this.vx));
-  this.vy = Math.max(-3, Math.min(3, this.vy));
+  this.vx = Math.max(-1.5, Math.min(1.5, this.vx));
+  this.vy = Math.max(-1.5, Math.min(1.5, this.vy));
+
 
   if (this.x < 0 || this.x > width) this.vx *= -1;
   if (this.y < 0 || this.y > height) this.vy *= -1;
