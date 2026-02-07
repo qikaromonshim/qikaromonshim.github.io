@@ -5,7 +5,11 @@ const crystal = new Crystal();
 let score = 0;
 
 canvas.addEventListener('click', e => {
-  if (crystal.isClicked(e.clientX, e.clientY)) {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  if (crystal.isClicked(mx, my)) {
     score++;
     crystal.reset();
   }
