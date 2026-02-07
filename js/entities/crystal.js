@@ -2,7 +2,7 @@ import { ctx, width, height, mouse } from '../core/canvas.js';
 
 export class Crystal {
   constructor() {
-    this.size = 20;
+    this.size = 30;
     this.reset();
   }
 
